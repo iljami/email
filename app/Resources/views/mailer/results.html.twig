@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="panel panel-default">
+    <div class="panel-heading">Users</div>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for user in users %}
+
+        <tr>
+            <th scope="row">{{ user.id }}</th>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td><button type="button" class="btn btn-danger">Write an email</button></td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+    </table>
+    </div>
+
+{% endblock %}
